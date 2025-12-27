@@ -1,8 +1,11 @@
 import numpy as np
 
 class OnlineLogisticRegression:
-    def __init__(self, n_features, lr=0.01):
+    def __init__(self, n_features, lr=0.01, decay=True):
         self.lr = lr
+        self.initial_lr = lr
+        self.decay = decay
+        self.t = 1
         self.weights = np.zeros(n_features)
         self.bias = 0
 
@@ -20,5 +23,10 @@ class OnlineLogisticRegression:
         y_pred = self.predict_proba(x)
         error = y_pred - y
 
-        self.weights -= self.lr * error * x
-        self.bias -= self.lr * error
+        lr = self.lr
+        if self.decay:
+            lr = self.initial_lr / np.sqrt(self.t)
+
+        self.weights -= lr * error * x
+        self.bias -= lr * error
+        self.t += 1

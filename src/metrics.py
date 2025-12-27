@@ -1,5 +1,5 @@
 from collections import deque
-from sklearn.metrics import accuracy_score, f1_score
+from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_score
 
 class SlidingWindowMetrics:
     def __init__(self, window_size=100):
@@ -14,6 +14,14 @@ class SlidingWindowMetrics:
     def get_metrics(self):
         if len(self.true) == 0:
             return {}
-        acc = accuracy_score(list(self.true), list(self.pred))
-        f1 = f1_score(list(self.true), list(self.pred))
-        return {"accuracy": acc, "f1": f1}
+        acc = accuracy_score(self.true, self.pred)
+        f1 = f1_score(self.true, self.pred)
+        prec = precision_score(self.true, self.pred)
+        rec = recall_score(self.true, self.pred)
+
+        return {
+            "accuracy": acc,
+            "f1": f1,
+            "precision": prec,
+            "recall": rec
+        }
