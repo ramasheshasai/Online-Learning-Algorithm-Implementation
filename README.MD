@@ -245,13 +245,6 @@ This approach is widely used in:
 
 ---
 
-## 🗣 Viva / Interview Answer
-You can explain like this:
-
-> “I developed a real-time Online Logistic Regression model that learns continuously from streaming data using Stochastic Gradient Descent. It updates weights per sample, uses sliding window evaluation for recent performance monitoring, detects concept drift to handle changing data behavior, supports learning rate scheduling, and provides a real-time accuracy visualization dashboard. I also benchmarked it against traditional batch Logistic Regression using Jupyter Notebook to prove its effectiveness.”
-
----
-
 ## 🚀 Future Enhancements
 - Real streaming (Kafka, MQTT, WebSockets)
 - Advanced drift detection (ADWIN, DDM)
