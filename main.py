@@ -21,6 +21,7 @@ for i, row in enumerate(stream_csv(PATH), start=1):
     x = np.array(row[features], dtype=float)
     y = int(row[TARGET_COL])
 
+
     pred = model.predict(x)
     metrics.update(y, pred)
     model.update(x, y)

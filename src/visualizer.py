@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 
+
 class LiveVisualizer:
     def __init__(self):
         plt.ion()

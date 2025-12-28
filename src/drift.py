@@ -1,6 +1,7 @@
 from collections import deque
 import numpy as np
 
+
 class DriftDetector:
     def __init__(self, window=200):
         self.window = window

@@ -7,6 +7,7 @@ class SlidingWindowMetrics:
         self.true = deque(maxlen=window_size)
         self.pred = deque(maxlen=window_size)
 
+
     def update(self, y_true, y_pred):
         self.true.append(y_true)
         self.pred.append(y_pred)

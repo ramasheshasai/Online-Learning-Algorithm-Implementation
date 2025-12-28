@@ -12,6 +12,7 @@ class OnlineLogisticRegression:
     def sigmoid(self, z):
         return 1 / (1 + np.exp(-z))
 
+
     def predict_proba(self, x):
         z = np.dot(x, self.weights) + self.bias
         return self.sigmoid(z)

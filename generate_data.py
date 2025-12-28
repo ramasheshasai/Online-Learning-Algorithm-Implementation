@@ -31,6 +31,7 @@ cols = [f"feat{i+1}" for i in range(FEATURES)]
 df = pd.DataFrame(X, columns=cols)
 df["target"] = y
 
+
 # Save CSV
 df.to_csv(SAVE_PATH, index=False)
 
